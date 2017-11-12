@@ -26,3 +26,8 @@ Route::resource('books', 'BookController');
 Route::post('books/{book}/download-links', 'DownloadLinkController@store')->name('books.download-links.store');
 
 Route::get('download/{token}', 'DownloadController@handle');
+
+Route::get('{username}', function ($username) {
+	$user = \App\Models\User::whereUsername($username)->firstOrFail();
+	return view('users.show', compact('user'));
+})->name('profile');
