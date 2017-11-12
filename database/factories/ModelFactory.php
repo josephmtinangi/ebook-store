@@ -31,3 +31,18 @@ $factory->define(App\Models\Category::class, function (Faker\Generator $faker) {
         'slug' => str_slug($name),
     ];
 });
+
+$factory->define(App\Models\Book::class, function (Faker\Generator $faker) {
+    $title = ucfirst($faker->unique()->sentence);
+
+    return [
+        'title' => $title,
+        'slug' => str_slug($title),
+        'category_id' => function () {
+            return factory('App\Models\Category')->create()->id;
+        },
+        'user_id' => function () {
+            return factory('App\Models\User')->create()->id;
+        },
+    ];
+});
