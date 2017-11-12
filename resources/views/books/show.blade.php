@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="page-header">
-              <h1>{{ $book->title }}<small> subtext</small></h1>
+              <h1>{{ $book->title }}<small> ({{ $book->category->name }})</small></h1>
             </div>
             <div class="panel panel-default">
                 <div class="panel-body">

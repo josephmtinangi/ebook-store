@@ -21,14 +21,19 @@ class Book extends Model
 		return $this->belongsTo(User::class);
 	}
 
+	public function category()
+	{
+		return $this->belongsTo(Category::class);
+	}
+
 	public function imageUrl()
 	{
 		if(! $this->image_url)
 		{
-			return asset('storage/books/default.png');
+			return asset('storage/books/default.jpg');
 		}
 
-		return asset('storage/books/' . $this->image_url);
+		return asset('storage/' . $this->image_url);
 	}
 
 	public function downloadLinks()

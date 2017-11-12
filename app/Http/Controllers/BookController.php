@@ -33,13 +33,21 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-    	Book::create([
+    	$book = Book::create([
     		'title' => $request->title,
     		'slug' => str_slug($request->title),
     		'description' => $request->description,
     		'category_id' => $request->category_id,
     		'user_id' => auth()->id(),
     	]);
+
+        if ($request->hasFile('image')) {
+            if ($request->file('image')->isValid()) {
+                $path = $request->image->store('books');
+                $book->image_url = $path;
+                $book->save();
+            }
+        }        
 
     	return redirect()->route('profile', auth()->user()->username);
     }

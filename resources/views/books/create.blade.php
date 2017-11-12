@@ -14,7 +14,7 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                    
-                    <form action="{{ route('books.store') }}" method="POST">
+                    <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
 
                         <div class="form-group">

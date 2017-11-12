@@ -11413,9 +11413,6 @@ button.close {
 
 .profile {
   padding: 30px 0;
-  text-align: center;
-  background: #437356;
-  color: #ffffff;
 }
 
 .thumbnail {
@@ -11423,7 +11420,7 @@ button.close {
 }
 
 .book {
-  min-height: 330px;
+  min-height: 380px;
 }
 
 .fa-icon {
