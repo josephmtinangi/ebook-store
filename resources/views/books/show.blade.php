@@ -7,8 +7,6 @@
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
-                <div class="panel-heading">{{ $book->title }}</div>
-
                 <div class="panel-body">
                     <div class="media">
                         <a class="pull-left" href="{{ route('books.show', $book->slug) }}">
