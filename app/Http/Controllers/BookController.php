@@ -33,13 +33,26 @@ class BookController extends Controller
 
     public function store(Request $request)
     {
-    	$book = Book::create([
-    		'title' => $request->title,
-    		'slug' => str_slug($request->title),
-    		'description' => $request->description,
-    		'category_id' => $request->category_id,
-    		'user_id' => auth()->id(),
-    	]);
+    	$book = new Book;
+        $book->title = $request->title;
+        $book->description = $request->description;
+        $book->category_id = $request->category_id;
+        $book->user_id = auth()->id();
+    	
+        $book->slug = str_slug($request->title);
+
+        $latestSlug = Book::whereRaw("slug RLIKE '^{$book->slug}(-[0-9]*)?$'")->latest('id')->pluck('slug');
+
+        if($latestSlug)
+        {
+            $pieces = explode('-', $latestSlug);
+
+            $number = (int)(end($pieces));
+
+            $book->slug .= '-' . ($number + 1);
+        }
+
+        $book->save();
 
         if ($request->hasFile('image')) {
             if ($request->file('image')->isValid()) {
