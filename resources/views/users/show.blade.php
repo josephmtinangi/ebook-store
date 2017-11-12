@@ -3,31 +3,34 @@
 @section('title', $user->name)
 
 @section('content')
+
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{ $user->name }}</h1>
+        <p>Joined {{ $user->created_at->diffForHumans() }}</p>
+        <p>
+            <a class="btn btn-primary btn-lg">Follow</a>
+        </p>
+    </div>
+</div>
+
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">{{ $user->name }} (Joined {{ $user->created_at->diffForHumans() }})</div>
-
-                <div class="panel-body">
-
-                    <h4>Summary</h4>
-                    <div class="table-responsive">
-                        <table class="table table-bordered">
-                            <tbody>
-                                <tr>
-                                    <th>Books Uploaded</th>
-                                    <td>{{ $user->books->count() }}</td>
-                                </tr>
-                                <tr>
-                                    <th>Books Downloaded</th>
-                                    <td>NaN</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>                   
-
-                </div>
+    <div class="profile">
+        <div class="row">
+            <div class="col-sm-4">
+                <i class="fa fa-upload"></i>
+                <h4>NaN</h4>
+                <p>XP</p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-upload"></i>
+                <h4>{{ $user->books->count() }}</h4>
+                <p>Books Uploaded</p>
+            </div>
+            <div class="col-sm-4">
+                <i class="fa fa-upload"></i>
+                <h4>NaN</h4>
+                <p>Books Downloaded</p>
             </div>
         </div>
     </div>

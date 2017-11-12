@@ -5,6 +5,34 @@
 // Variables
 @import "variables";
 
+// Functions
+@import "functions";
+
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+.navbar {
+	margin-bottom: 0;
+}
+
+.panel-heading {
+	.panel-title {
+		color: set-text-color($brand-primary);
+	}
+}
+
+.profile {
+	padding: 30px 0;
+	text-align: center;
+	background: $brand-primary;
+	color: set-text-color($brand-primary);
+}
+
+.thumbnail {
+	margin-top: 10px;
+}
+
+.book {
+	min-height: 330px;
+}
 
