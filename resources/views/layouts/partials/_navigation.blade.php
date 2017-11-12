@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
 
@@ -45,7 +45,6 @@
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="{{ route('profile', Auth::user()->username) }}">Profile</a></li>
-                            <li><a href="#">My Uploads</a></li>
                             <li>
                                 <a href="{{ route('logout') }}"
                                     onclick="event.preventDefault();

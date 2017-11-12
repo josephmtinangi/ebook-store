@@ -8,7 +8,7 @@
         <h1>{{ config('app.name') }}</h1>
         <p>Best ebooks</p>
         <p>
-            <a class="btn btn-primary btn-lg">Browse Books</a>
+            <a href="{{ route('books.index') }}" class="btn btn-primary btn-lg">Browse Books</a>
         </p>
     </div>
 </div>
