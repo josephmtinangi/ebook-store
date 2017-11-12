@@ -18,21 +18,23 @@
                             <h4 class="media-heading">{{ $book->title }}</h4>
                             <p>{{ $book->description }}</p>
                             <p>Uploaded by {{ $book->user->name }}</p>
+                            <p>Downloads: <span class="badge">{{ $book->downloads() }}</span></p>
                             <p class="text-muted">{{ $book->created_at->toDateTimeString() }}</p>                            
                         </div>
                     </div>
                     <hr>
 
-                    <form action="" method="POST" class="form-inline" role="form">
+                    <form action="{{ route('books.download-links.store', $book->slug) }}" method="POST" class="form-inline" role="form">
+                        {{ csrf_field() }}
                     
                         <div class="form-group">
-                            <label class="sr-only" for="">label</label>
-                            <input type="email" class="form-control" id="" placeholder="Name">
+                            <label class="sr-only" for="name">Name</label>
+                            <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                         </div>
 
                         <div class="form-group">
-                            <label class="sr-only" for="">label</label>
-                            <input type="email" class="form-control" id="" placeholder="Email">
+                            <label class="sr-only" for="email">Email</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Email">
                         </div>
                     
                         

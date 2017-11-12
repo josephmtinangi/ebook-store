@@ -21,6 +21,16 @@ class Book extends Model
 		return asset('storage/books/' . $this->image_url);
 	}
 
+	public function downloadLinks()
+	{
+		return $this->hasMany(DownloadLink::class);
+	}
+
+	public function downloads()
+	{
+		return $this->downloadLinks()->whereToken(null)->count();
+	}
+
     public function getRouteKeyName()
     {
     	return 'slug';

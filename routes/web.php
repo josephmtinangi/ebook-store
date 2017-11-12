@@ -22,3 +22,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('categories', 'CategoryController');
 
 Route::resource('books', 'BookController');
+
+Route::post('books/{book}/download-links', 'DownloadLinkController@store')->name('books.download-links.store');
+
+Route::get('download/{token}', 'DownloadController@handle');
