@@ -11,28 +11,9 @@
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
-.navbar {
-	margin-bottom: 0;
-}
+// Fontawesome
+@import "node_modules/font-awesome/scss/font-awesome";
 
-.panel-heading {
-	.panel-title {
-		color: set-text-color($brand-primary);
-	}
-}
-
-.profile {
-	padding: 30px 0;
-	text-align: center;
-	background: $brand-primary;
-	color: set-text-color($brand-primary);
-}
-
-.thumbnail {
-	margin-top: 10px;
-}
-
-.book {
-	min-height: 330px;
-}
+// Custom
+@import "custom";
 

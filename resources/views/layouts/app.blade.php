@@ -18,6 +18,29 @@
         @include('layouts.partials._navigation')
 
         @yield('content')
+
+        <footer>
+            <div class="container">
+                <p>Copyright &copy; {{ date('Y') }} {{ config('app.name') }}</p>
+                <p>
+                    <ul class="list-inline">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                    </ul>
+                </p>
+                <p>
+                    <ul class="list-inline">
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </p>
+            </div>
+        </footer>
+
     </div>
 
     <!-- Scripts -->

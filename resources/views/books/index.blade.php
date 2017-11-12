@@ -4,6 +4,7 @@
 
 @section('content')
 <div class="container">
+    <h2 class="text-center">All Books</h2>
     @if($books->count())
         @foreach($books->chunk(4) as $booksSet)
             <div class="row">

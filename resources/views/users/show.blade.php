@@ -18,17 +18,17 @@
     <div class="profile">
         <div class="row">
             <div class="col-sm-4">
-                <i class="fa fa-upload"></i>
+                <i class="fa fa-flash fa-icon"></i>
                 <h4>NaN</h4>
                 <p>XP</p>
             </div>
             <div class="col-sm-4">
-                <i class="fa fa-upload"></i>
+                <i class="fa fa-upload fa-icon"></i>
                 <h4>{{ $user->books->count() }}</h4>
                 <p>Books Uploaded</p>
             </div>
             <div class="col-sm-4">
-                <i class="fa fa-upload"></i>
+                <i class="fa fa-download fa-icon"></i>
                 <h4>NaN</h4>
                 <p>Books Downloaded</p>
             </div>

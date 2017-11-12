@@ -4,6 +4,11 @@
 
 @section('content')
 <div class="container">
+
+    <div class="page-header">
+      <h1>{{ $category->name }}<small> ({{ $count = $category->booksCount() }} {{ str_plural('Book', $count) }})</small></h1>
+    </div>
+
     @if($category->books->count())
         @foreach($category->books->chunk(4) as $booksSet)
             <div class="row">
@@ -14,9 +19,6 @@
                 @endforeach
             </div>
         @endforeach
-
-    @else
-        <div class="alert alert-info">No Book</div>
     @endif
 </div>
 @endsection
